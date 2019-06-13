@@ -1,4 +1,4 @@
-FROM python:3.7-alpine
+FROM python:3
 MAINTAINER SASIN SIRISKAOWKUL
 
 ENV PYTHONUNBUFFERED 1
@@ -9,8 +9,8 @@ RUN pip install -r /requirements.txt
 
 RUN mkdir /app
 WORKDIR /app
-COPY ./recipe_app_api /app
+COPY app /app
 
 # For Security so Docker image won't run using root
-RUN adduser -D user
-USER user
+#RUN adduser -D user
+#USER user
